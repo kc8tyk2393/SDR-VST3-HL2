@@ -94,7 +94,7 @@ jobs:
       - name: Upload installer artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Thetis-VK-amp-control-windows-installer
+          name: SDR-VST3-HL2-windows-installer
           path: |
             Project Files/bin/Installers/*.exe
             Project Files/bin/Installers/*.msi
@@ -109,8 +109,8 @@ jobs:
           body: |
             ## Windows installer
 
-            - **`.exe` (recommended)** — installs .NET 10 Desktop Runtime if needed, then Thetis VK amp control (SDR-VST3) into Program Files.
+            - **`.exe` (recommended)** — installs .NET 10 Desktop Runtime if needed, then SDR-VST3-HL2 into Program Files.
             - **`.msi`** — product only; requires .NET 10 Desktop Runtime already installed.
 
-            After install, use the **Thetis VK amp control** desktop shortcut. Power the radio before starting Helios DX.
+            After install, use the **SDR-VST3-HL2-x64** desktop shortcut. It keeps the HL2 database separate and includes the VK3 amp box.
           generate_release_notes: true

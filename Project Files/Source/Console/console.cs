@@ -690,7 +690,7 @@ namespace Thetis
             {
                 if (Environment.Is64BitProcess)
                     app_data_path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                    + "\\OpenHPSDR\\SDR-VST3-x64\\";
+                    + "\\OpenHPSDR\\SDR-VST3-HL2-x64\\";
                 else
                     app_data_path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
                         + "\\OpenHPSDR\\SDR-VST3\\";
@@ -828,13 +828,13 @@ namespace Thetis
             LogTool.AddLogEntry("Initialising database...", "DB");
             Splash.SetStatus("Initializing Database");          // Set progress point
 
-            //Uncomment for HL2 build
-            //bool dbid_exists = args.Any(arg => arg.IndexOf("-dbid", StringComparison.OrdinalIgnoreCase) >= 0);
-            //if (!dbid_exists)
-            //{
-            //    Array.Resize(ref args, args.Length + 1);
-            //    args[args.Length - 1] = "-dbid:HL2";
-            //}
+            // HL2 build keeps its database separate from SDR-VST3
+            bool dbid_exists = args.Any(arg => arg.IndexOf("-dbid", StringComparison.OrdinalIgnoreCase) >= 0);
+            if (!dbid_exists)
+            {
+                Array.Resize(ref args, args.Length + 1);
+                args[args.Length - 1] = "-dbid:HL2";
+            }
             bool ok = DBMan.LoadDB(args, out string broken_folder);
             if (!ok)
             {
@@ -1573,7 +1573,7 @@ namespace Thetis
                     + "\\OpenHPSDR\\SDR-VST3\\";
                 if (Environment.Is64BitProcess)
                     app_data_path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                    + "\\OpenHPSDR\\SDR-VST3-x64\\";
+                    + "\\OpenHPSDR\\SDR-VST3-HL2-x64\\";
 
 #if(DEBUG)
                 app_data_path += "Debug\\";
