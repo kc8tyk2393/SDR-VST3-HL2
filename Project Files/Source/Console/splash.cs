@@ -39,6 +39,10 @@
 // Richard Samphire can be reached by email at :  mw0lge@grange-lane.co.uk                    //
 //============================================================================================//
 
+//////////////
+// 2023-26 : modified by MI0BOT for HL2 support. Please see any code commented with my callsign for details
+//////////////
+
 using System;
 using System.Runtime.InteropServices;
 using System.Collections;
@@ -584,7 +588,7 @@ namespace Thetis
 	{
 		private const string SOFTWARE_KEY = "Software";
 		private const string COMPANY_NAME = "OpenHPSDR";
-		private const string APPLICATION_NAME = "SDR-VST3";
+		private const string APPLICATION_NAME = "SDR-VST3-HL2";
 
 		// Method for retrieving a Registry Value.
 		static public string GetStringRegistryValue(string key, 

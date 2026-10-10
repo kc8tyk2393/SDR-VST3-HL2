@@ -721,10 +721,10 @@ namespace Thetis
                 if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
                 string ts = DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
-                string path = Path.Combine(dir, $"SDR-VST3_{ts}.crash");
+                string path = Path.Combine(dir, $"SDR-VST3-HL2_{ts}.crash");
 
                 var sb = new StringBuilder();
-                sb.AppendLine("SDR-VST3 Crash Report");
+                sb.AppendLine("SDR-VST3-HL2 Crash Report");
                 sb.AppendLine("Timestamp: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 sb.AppendLine("Version: " + GetVerNum(true));
                 try { sb.AppendLine("RenderPath: " + Display.RenderPathString()); } catch { sb.AppendLine("RenderPath: Unknown"); }

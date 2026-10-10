@@ -1,4 +1,4 @@
-﻿/*  ucOCLedStrip.cs
+/*  ucOCLedStrip.cs
 
 This file is part of a program that implements a Software-Defined Radio.
 
@@ -37,6 +37,10 @@ mw0lge@grange-lane.co.uk
 // its original terms and is not affected by this dual-licensing statement in any way.        //
 // Richard Samphire can be reached by email at :  mw0lge@grange-lane.co.uk                    //
 //============================================================================================//
+
+//////////////
+// 2023-26 : modified by MI0BOT for HL2 support. Please see any code commented with my callsign for details
+//////////////
 
 using System;
 using System.Collections.Generic;
@@ -77,11 +81,21 @@ namespace Thetis
             }
         }
 
+        private int m_displayBits = 7;  // MI0BOT: HL2
+        public int DisplayBits
+        {
+            get { return m_displayBits; }
+            set
+            {
+                m_displayBits = value;
+            }
+        }
+
         private void usOCLedStrip_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
-            for(int nPin = 0; nPin < 7; nPin++)
+            for(int nPin = 0; nPin < m_displayBits; nPin++)
             {
                 int x = nPin * 16;
 

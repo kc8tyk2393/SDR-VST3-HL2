@@ -1,4 +1,4 @@
-﻿/*  ucRadioList.cs
+/*  ucRadioList.cs
 
 This file is part of a program that implements a Software-Defined Radio.
 
@@ -37,6 +37,10 @@ mw0lge@grange-lane.co.uk
 // its original terms and is not affected by this dual-licensing statement in any way.        //
 // Richard Samphire can be reached by email at :  mw0lge@grange-lane.co.uk                    //
 //============================================================================================//
+
+//////////////
+// 2023-26 : modified by MI0BOT for HL2 support. Please see any code commented with my callsign for details
+//////////////
 
 using System;
 using System.Collections.Generic;
@@ -1965,6 +1969,12 @@ if (!DoesRadioExist(item.Key))
                     {
                         versionText += " p2app=" + radio.BetaVersion.ToString();
                     }
+                    break;
+
+                case HPSDRHW.HermesLite:   // MI0BOT: HL2
+                    versionText = (radio.CodeVersion / 10.0f).ToString("F1");
+                    if (radio.BetaVersion > 0)
+                        versionText += "." + radio.BetaVersion.ToString();
                     break;
 
                 default:

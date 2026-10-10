@@ -1,4 +1,4 @@
-﻿/*  clsProgressLog.cs
+/*  clsProgressLog.cs
 
 This file is part of a program that implements a Software-Defined Radio.
 
@@ -463,7 +463,7 @@ namespace Thetis
 
             public LogForm()
             {
-                Text = "SDR-VST3 Startup Log";
+                Text = "SDR-VST3-HL2 Startup Log";
                 StartPosition = FormStartPosition.Manual;
                 Size = new Size(400, 680);
                 FormBorderStyle = FormBorderStyle.FixedToolWindow;
